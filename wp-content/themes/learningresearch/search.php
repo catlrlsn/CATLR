@@ -1,74 +1,68 @@
 <?php get_header(); ?>
-
-
-    <section class="container" id="primary" role="main">
-		<div class="row">
-			<div class="col-lg-8">
-
-		    	<article class="post" id="post-404">
-		    		<header class="post-header">
-		    			<h5 class="post-meta">Search Results</h5>
-		    			<h1 class="post-title"><?php _e('Search Results for:', 'bonestheme'); ?> <?php echo esc_attr(get_search_query()); ?></h1>
-		    		</header><!-- /post-header -->
-				</article><!-- /post -->
-
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-				<article <?php post_class('post'); ?> id="post-<?php the_ID(); ?>" role="article">
-		    		<header class="post-header">
-		    			<h2 class="post-title">
-		    				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-		    			</h2>
-		    		</header><!-- /post-header -->
-
-					<section class="post-content">
-
-						<?php the_excerpt('<span class="read-more">' . __('Read more &raquo;', 'bonestheme') . '</span>'); ?>
-
-					</section><!-- /post-content -->
-
-					<?php edit_post_link('edit', '<footer class="post-footer"><p>', '</p></footer>'); ?>
-				</article> <!-- /post -->
-
-				<?php endwhile; ?>
-
-					<?php if (function_exists('bones_page_navi')) : ?>
-
-							<?php bones_page_navi(); ?>
-
-					<?php else : ?>
+    <div class="container" class="clearfix row">
+		<div id="main" class="col col-lg-8 clearfix" role="main">
+				<div class="page-header" style="margin-top: 0px;">
+                    <h1><span><?php _e("Search Results for","wpbootstrap"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1>
+                </div>
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+				<header>
+				<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+				<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(); ?></time> <?php _e("by", "wpbootstrap"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "wpbootstrap"); ?> <?php the_category(', '); ?>.</p>
+						
+				</header> <!-- end article header -->
+					
+				<section class="post_content">
+							<?php the_excerpt('<span class="read-more">' . __("Read more on","wpbootstrap") . ' "'.the_title('', '', false).'" &raquo;</span>'); ?>
+					
+				</section> <!-- end article section -->
+						
+				<footer>
+					
+							
+				</footer> <!-- end article footer -->
+					
+				</article> <!-- end article -->
+					
+				<?php endwhile; ?>	
+					
+					<?php if (function_exists('wp_bootstrap_page_navi')) { // if expirimental feature is active ?>
+						
+						<?php wp_bootstrap_page_navi(); // use the page navi function ?>
+						
+					<?php } else { // if it is disabled, display regular wp prev & next links ?>
 						<nav class="wp-prev-next">
 							<ul class="clearfix">
-								<li class="prev-link"><?php next_posts_link(__('&laquo; Older Entries', "bonestheme")) ?></li>
-								<li class="next-link"><?php previous_posts_link(__('Newer Entries &raquo;', "bonestheme")) ?></li>
+								<li class="prev-link">
+                                    <?php previous_posts_link() ?>
+                                    <span style="float:right;"><?php next_posts_link() ?></span>
+                                </li>
 							</ul>
 						</nav>
+					<?php } ?>			
+					
+					<?php else : ?>
+					
+					<!-- this area shows up if there are no results -->
+					
+					<article id="post-not-found">
+					    <header>
+					    	<h1><?php _e("Not Found", "wpbootstrap"); ?></h1>
+					    </header>
+					    <section class="post_content">
+					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "wpbootstrap"); ?></p>
+					    </section>
+					    <footer>
+					    </footer>
+					</article>
+					
 					<?php endif; ?>
-
-				<?php else : ?>
-
-					<article <?php post_class('post'); ?> id="post-<?php the_ID(); ?>" role="article">
-			    		<header class="post-header">
-			    			<h1 class="post-title">
-			    				<?php _e("Sorry, No Results.", "bonestheme"); ?>
-			    			</h1>
-			    		</header><!-- /post-header -->
-
-						<section class="post-content">
-
-							<p><?php _e("Try your search again.", "bonestheme"); ?></p>
-
-						</section><!-- /post-content -->
-
-						<?php edit_post_link('edit', '<footer class="post-footer"><p>', '</p></footer>'); ?>
-					</article> <!-- /post -->
-
-				<?php endif; ?>
-
-			</div>
-		</div>
-	</section>
-	<!-- /#primary -->
-
+			
+				</div> <!-- end #main -->
+    			<div id="main" class="col col-lg-4 clearfix" role="main">
+                    <img src="http://placehold.it/350x750">
+                </div>
+    			
+			</div> <!-- end #content -->
 
 <?php get_footer(); ?>

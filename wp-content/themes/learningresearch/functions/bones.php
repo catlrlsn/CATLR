@@ -345,9 +345,7 @@ function bones_page_navi($before = '', $after = '') {
 		$first_page_text = __( "First", 'bonestheme' );
 		echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
 	}
-	echo '<li class="bpn-prev-link">';
-	previous_posts_link('<<');
-	echo '</li>';
+
 	for($i = $start_page; $i  <= $end_page; $i++) {
 		if($i == $paged) {
 			echo '<li class="bpn-current">'.$i.'</li>';
