@@ -1,0 +1,17 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /catlr/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /catlr/index.php [L]
+</IfModule>
+
+# END WordPress
+
+Redirect 301 /learningresearch/conference/caet http://www.northeastern.edu/learningresearch/conferences/conference-for-advancing-evidence-based-teaching
+Redirect 301 /learningresearch/integratingxl http://www.northeastern.edu/learningresearch/teaching-support/teaching-strategies/integratingexperientiallearning
+
+Redirect 301 /learningresearch/trace/trace-comments-and-redaction http://www.northeastern.edu/trace/comments-redaction/

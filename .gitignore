@@ -1,3 +1,18 @@
+# Keep these files out of the repo
+/wp-content/themes/twenty*
+/wp-content/themes/learningresearch/.git*
+/wp-content/upgrade
+/wp-content/uploads
+/sitemap.*
+/wp-config.php
+*.sql
+
+# Hidden files
+*.DS_Store
+*Thumbs.db
+*.sass-cache*
+*~imageoptim*
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

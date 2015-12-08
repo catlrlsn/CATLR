@@ -1,0 +1,157 @@
+// Flexslider
+// -------------------------
+
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+.flexslider {
+	position: relative;
+	margin: 0; padding: 0;
+	.slides > li { position:relative; display: none; -webkit-backface-visibility: hidden;}
+	.slides img {width: 100%; display: block;}
+
+	.flex-pauseplay span {text-transform: capitalize;}
+
+	.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+
+}
+html[xmlns] .slides {display: block;} 
+* html .slides {height: 1%;}
+
+.no-js .slides > li:first-child {display: block;}
+
+/* Control Nav */
+.flex-control-nav {
+	li {margin: 0 6px 0 0; display: inline-block; zoom: 1; *display: inline;}
+	
+	@media screen and (min-width: @screen-tablet) {
+		position: absolute;
+		bottom: 15px;
+		right: 20px;
+	}
+}
+.flex-control-paging {
+	li a { 
+		width: 15px; 
+		height: 15px;
+		border-radius: 15px;
+		display: block; 
+		background: #FFF; 
+		cursor: pointer; 
+		text-indent: -9999px; 
+	}
+	li a:hover { background: #CCC; }
+	li a.flex-active { background: @neu-red; cursor: default; }
+}
+
+.flex-control-thumbs {
+	margin: 5px 0 0; position: static; overflow: hidden;
+
+	li {width: 25%; float: left; margin: 0;}
+	img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+	img:hover {opacity: 1;}
+	.flex-active {opacity: 1; cursor: default;}
+}
+
+// Hero & Flexslider
+// -------------------------
+
+@media screen and (min-width: @screen-desktop) {
+
+	.section-hero {
+
+		.hero-content {
+			padding: 0;
+			position: absolute;
+			top: 50px;
+			z-index: 999;
+		}
+
+		.hero-title, 
+		.hero-excerpt {
+			color: #f8fff0;
+			text-shadow: 2px 2px 5px rgba(0,0,0, .5);
+		}
+
+		.hero-title { font-size: 42px; }
+		.hero-excerpt { 
+			font-size: 24px;
+			font-weight: 300;
+		}
+
+		.hero-content-dark {
+			.hero-title, .hero-excerpt {
+				color: #000;
+				text-shadow: 1px 1px 2px rgba(255,255,255, .65);
+			}
+		}
+
+		.btn {
+			padding: 15px 25px 15px 15px;
+			font-style: italic;
+			.opacity(.7);
+		}
+
+		.flex-control-nav {
+			max-width: 1170px;
+			margin: -50px auto 0;
+
+			z-index: 999;
+			position: relative;
+		}
+	}
+
+}
+
+@media screen and (max-width: @screen-large) {
+	.flex-control-nav {
+		text-align: center;
+	}
+	.flex-control-paging li a {
+		background: #CCC;
+	}
+}
+
+// Then generate the larger grid classes via media query
+@media screen and (max-width: @screen-phone) {
+	.hero-image {
+		position: relative;
+		max-width: none;
+		margin: 0 0 10px;
+	}
+}
+
+
+// Alternate options
+.hero {
+	position: relative;
+
+	.hero-content {
+		@media (min-width: (@screen-tablet+1)) {
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			max-width: 630px;
+		}
+		-webkit-font-smoothing: antialiased;
+		color: #fff;
+
+		p {
+			margin: 0 0 40px;
+			padding: 20px 25px;
+			font-size: 20px;
+			background: rgba(0,0,0, .65);
+		}
+		a:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+

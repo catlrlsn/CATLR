@@ -1,0 +1,318 @@
+//
+// Chrome - major components 
+// --------------------------------------------------
+
+
+// Header
+// -------------------------
+
+#header { padding: 30px 0; }
+
+
+// Navigation
+// -------------------------
+
+#navigation {
+	margin: 0 0 30px;
+	min-height: 45px;
+	background: @brand-primary;
+	position: relative;
+	z-index: 9999;
+}
+
+.nav {
+	li { margin: 0; }
+	> li {
+		> a { 
+			text-transform: uppercase; 
+			font-size: 14px;
+			color: #FFF;
+		}
+
+		&:hover {
+			@media screen and (min-width: @screen-tablet) { 
+				background: #FFF;
+				a { color: @brand-primary; }
+			}
+
+			.sub-menu { display:block; }
+		}
+	}
+
+}
+
+.navbar {
+	margin-bottom: 30px;
+	border-radius: 0;
+}
+.home .navbar { margin-bottom: 0; }
+
+.navbar-brand { padding: 15px 0; }
+.navbar-toggle {
+	border: none;
+	color: #fff;
+
+	&:hover, 
+	&:focus {
+		background: transparent; 
+	}
+}
+
+/* Navigation sub-menu */
+.sub-menu {
+	list-style: disc inside;
+	a {
+		color: #FFF;
+	}
+}
+@media (min-width: @screen-tablet) {
+	.sub-menu { 
+		display:none; 
+		position:absolute; 
+		z-index:2000;
+		top: 48px; left: -1px; 
+		padding: 0 0 0; 
+		width: 200px; 
+		background: #FFF;
+		border-width: 0 1px 1px;
+		border-style: solid;
+		border-color: @brand-primary;
+		list-style: none;
+
+		ul { display: none; }
+
+		li { 
+			float: none;
+			margin: 0; padding:0 10px;
+			border-left:2px solid transparent;
+
+			&:hover { border-color:@brand-primary; }
+			&:last-child a { border:none; }
+		}
+		a { 
+			display: block;
+			padding: 10px 0 8px;
+			font-size: 14px;
+			font-weight: normal;
+			border-bottom:1px dotted @brand-primary;
+
+			&:hover {
+				background:transparent; 
+				color:@brand-primary;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+
+// Mega menu navigation
+// -------------------------
+
+.neu-menu {
+	width: 100%;
+	position: relative;
+
+	/* general ul style */
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	/* first level ul style */
+	> ul,
+	.neu-menusub-inner {
+		margin: 0 auto;
+	}
+
+	> ul > li {
+		display: inline-block;
+	}
+
+	> ul > li > a {
+		padding: 0 20px;
+		line-height: 45px;
+		font-size: 14px;
+		color: #FFF;
+		text-transform: uppercase; 
+		display: inline-block;
+	}
+
+	> ul > li > a:hover {
+		text-decoration: none;
+	}
+
+	> ul > li.neu-menu-open > a {
+		color: @brand-primary;
+	}
+
+	> ul > li.neu-menu-open a,
+	> ul > li.neu-menu-open > a:hover,
+	.neu-menusub {
+		background: #EAEAEA;
+		color: #555;
+	}
+
+	/* sub-menu */
+	.neu-menusub {
+		display: none;
+		position: absolute;
+		width: 100%;
+		left: 0;
+	}
+
+	.neu-menu-open .neu-menusub {
+		display: block;
+		padding-bottom: 3em;
+	}
+
+	.neu-menusub-inner:before,
+	.neu-menusub-inner:after {
+		content: " ";
+		display: table;
+	}
+
+	.neu-menusub-inner:after {
+		clear: both;
+	}
+
+	.neu-menusub-inner > div a {
+		line-height: 2em;
+	}
+
+	.neu-menusub h4 {
+		color: @brand-primary;
+		padding: 2em 0 0.6em;
+		margin: 0;
+		font-weight: 300;
+	}
+
+}
+
+/* Examples for media queries */
+
+@media screen and (max-width: 1024px) { 
+
+	.neu-menu>ul>li>a {
+		font-size: 80%;
+		padding: 0 10px;
+	}
+
+}
+
+@media screen and (max-width: 43em) { 
+
+	.neu-menu {
+		font-size: 120%;
+		border: none;
+	}
+
+	.neu-menu > ul,
+	.neu-menu .neu-menusub-inner {
+		width: 100%;
+		padding: 0;
+	}
+
+	.neu-menu .neu-menusub-inner {
+		font-size: 85%;
+	}
+
+	.neu-menu > ul > li {
+		display: block;
+		border-bottom: 1px solid #FFF;
+	}
+
+	.neu-menu > ul > li > a { 
+		display: block;
+		padding: 0 25px;
+	}
+
+	.neu-menu .neu-menusub { 
+		position: relative;
+	}
+
+	.neu-menusub h4 {
+		padding-top: 0.6em;
+	}
+
+}
+
+@media screen and (max-width: 36em) { 
+	.neu-menu .neu-menusub-inner > div {
+		width: 100%;
+		float: none;
+	}
+}
+
+
+// Primary content
+// -------------------------
+
+#primary { }
+
+
+// Provost Navigation
+// -------------------------
+
+.nav-provost {
+	margin-top: 50px;
+	background: #3f3f3f;
+	font-size: 13px;
+
+	.breadcrumb {
+		background: transparent; 
+		padding-left: 0;
+		padding-right: 0;
+		margin: 0;
+		
+		li {
+			margin: 0;
+			color: #fff;
+			text-shadow: none;
+			-webkit-font-smoothing: antialiased;
+		}
+		a { color: inherit; }
+	}
+}
+
+
+// Footer
+// -------------------------
+
+#footer { 
+	position: relative;
+	padding: 30px 0 20px; 
+	font-size: 12px; letter-spacing: 0.03em;
+	background: #5A5A5A;
+
+	a {
+		color: #aaa !important;		
+		&.logo { 
+			background: url("http://northeastern.edu/news/wp-content/themes/nu-news/images/footer/NUlogo-footer.png") no-repeat scroll left top transparent; 
+			display:block; 
+			height: 25px; 
+			opacity: 0.6; 
+
+			&:hover { opacity: 1; }
+		}
+		&.social { display: block; float: right; height: 16px; margin-left: 6px; opacity: 0.7; width: 16px; } 
+		&.social:hover { opacity: 1; }
+		&.facebook { background: url("http://northeastern.edu/news/wp-content/themes/nu-news/images/footer/footer-fb-icon.png") repeat scroll 0 0 transparent; } 
+		&.twitter { background: url("http://northeastern.edu/news/wp-content/themes/nu-news/images/footer/footer-twitter-icon.png") repeat scroll 0 0 transparent; } 
+		&.youtube { background: url("http://northeastern.edu/news/wp-content/themes/nu-news/images/footer/footer-youtube-icon.png") repeat scroll 0 0 transparent; }
+	}
+	a:link, .nuglobal a:visited { color: #aaa !important; } 
+	a:hover, .nuglobal a:active { color: #888 !important; }
+
+	p { color:#aaa !important; font-size: 13px !important; line-height: 125%; margin-bottom: 10px !important; } 
+	.about-news p, p.about-news { color: #7F7F7F; font-size: 12px; line-height: 130%; padding-right: 10px; } 
+	.media-icons-footer { clear: none; display: block; float: left; height: 26px; width: 100px; } 
+	.media-icon { background-image: url("http://northeastern.edu/news/wp-content/themes/nu-news/images/media-icons.png"); clear: none; display: block; float: left; height: 26px; margin: 0 7px 0 0; width: 26px; } 
+	#icon-youtube { background-position: 0 30px; } 
+	#icon-youtube:hover { background-position: 0 0; } 
+	#icon-twitter { background-position: 60px 30px; } 
+	#icon-twitter:hover { background-position: 60px 0; } 
+	#icon-facebook { background-position: 30px 30px; } 
+	#icon-facebook:hover { background-position: 30px 0; } 
+}
