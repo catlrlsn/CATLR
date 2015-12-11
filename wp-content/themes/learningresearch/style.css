@@ -6,13 +6,14 @@ Author: Provost Web
 Author URI: http://www.northeastern.edu/provost
 Version: 1.0
 */
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
 /**********SPACERS****************/
 .right-spacer{
   margin-right: 20px;
 }
-/**********SPACERS****************/
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
+/**********Search****************/
 /* iPhone Retina Extra Small Devices, Phones */
 @media only screen and (max-width: 768px) {
     .search-form{
@@ -73,9 +74,26 @@ span[class*="fontawesome-"]:before {
     border:none;
     border-left: 1px solid;
 }
+/**********Sidebar****************/
+.accordion > li {
+    display:block;
+}
+.accordion > li > a {
+ width: 75%;
+ float: left;
+}
+.caret {
+    float:right;
+    cursor:pointer;
+    cursor:hand;
+    margin-left:20px;
+    position:relative;
+    top: 20px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #000000;
+}
 /* ---------- GENERAL ---------- */
-
-
 button {
     -webkit-appearance: button;
     background: transparent;

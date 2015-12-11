@@ -340,11 +340,35 @@ add_filter( 'page_row_actions', 'rd_duplicate_post_link', 10, 2 );
 add_filter('events_cpt_row_actions', 'rd_duplicate_post_link', 10, 2);
 
 
+/**
+ * Walker class for subnavigation
+ */
+class My_Walker extends Walker_Page {
+
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $indent = str_repeat("\t", $depth);
+
+        if ($depth == 0) {
+            $output .= "\n$indent<div class='container'><div class='container2'><ul>\n";
+        } else {
+            $output .= "\n$indent<ul class='children'>\n";
+        }
+    }
+
+    function end_lvl( &$output, $depth = 0, $args = array() ) {
+        $indent = str_repeat("\t", $depth);
+
+        if ($depth == 0) {
+            $output .= "$indent</ul></div></div>\n";
+        } else {
+            $output .= "$indent</ul>\n";
+        }
+    }
+}
 
 /**
  * Get Subnavigation
  */
-
 function get_subnavigation( $display = 'subnavigation', $post_type = 'page' )
 {
     global $post;
@@ -353,7 +377,14 @@ function get_subnavigation( $display = 'subnavigation', $post_type = 'page' )
     if ( !$post->post_parent ) 
     {
         $title = get_the_title();
-        $children = wp_list_pages("title_li=&child_of=".$post->ID."&depth=3&post_type=".$post_type."&echo=0");
+        $children = wp_list_pages(array(
+        'title_li'   => null,
+        'child_of'   => $post->ID,
+        'depth'      => 3,
+        'post_type'  => $post_type,
+        'echo'       => 0,
+        'walker'     => new My_Walker()
+        ));
     } 
     else 
     {
@@ -362,10 +393,11 @@ function get_subnavigation( $display = 'subnavigation', $post_type = 'page' )
             $ancestors = end($post->ancestors);
             $title = '<a href="'. get_permalink($ancestors) .'">'. get_the_title($ancestors) .'</a>';
             $children = wp_list_pages("title_li=&child_of=".$ancestors."&depth=3&post_type=".$post_type."&echo=0");
+         
         }
     }
 
-    if ( $display == 'subnavigation' ) { 
+    if ( $display == 'subnavigation' ) {
         return $children;
     } else {
         return $title;

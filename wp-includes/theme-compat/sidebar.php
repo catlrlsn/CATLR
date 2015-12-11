@@ -52,7 +52,7 @@ _deprecated_file( sprintf( __( 'Theme without %1$s' ), basename(__FILE__) ), '3.
 		<?php }?>
 		</ul>
 		<ul role="navigation">
-			<?php wp_list_pages('title_li=<h2>' . __('Pages') . '</h2>' ); ?>
+			<?php wp_list_pages('title_li=<h2>' . __('Pages') . '</h2>'); ?>
 
 			<li><h2><?php _e('Archives'); ?></h2>
 				<ul>

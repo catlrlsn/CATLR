@@ -14,14 +14,14 @@
 
 <aside id="sidebar-page" role="sidebar">
 	<div class="entry-sidebar-simple" style="margin-top:0;">
-            <!--
+           <!-- CHANGE HERE CRISTIAN -->
             <div class="well">
                 <h4 class="text-center"><b>Register to Attend</b></h4>
                 <div id="wufoo-q1yiz2sc1bs1fv8">
-                    Fill out my <a href="https://provostweb.wufoo.com/forms/q1yiz2sc1bs1fv8">online form</a>.
+                    <a href="https://provostweb.wufoo.com/forms/q1yiz2sc1bs1fv8">Online Form</a>.
                 </div>
             </div>
-            -->
+            
         <?php /*
             <script type="text/javascript">
                 var q1yiz2sc1bs1fv8;(function(d, t) {

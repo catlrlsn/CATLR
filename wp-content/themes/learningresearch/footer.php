@@ -31,8 +31,6 @@
             </div>
         </footer>
         <!-- /#footer -->
-
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/bootstrap/bootstrap.min.js"></script>
@@ -48,21 +46,7 @@
             var _gaq=[['_setAccount','UA-3620896-42'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+            s.parentNode.insertBefore(g,s)}(document,'script'));  
         </script>
-        <script>
-            (function($) {
-              var allPanels = $('.accordion > li > ul').hide();
-              if($('.accordion > li > ul').css('display') == 'none'){
-                  $('.accordion > li').hover(
-                  function() {
-                        $(this).find('ul:first').slideDown(700);
-                  },
-                  function() {
-                        $(this).find('ul:first').slideUp(700);
-                  });
-              }
-            })(jQuery); 
-       </script>
     </body>
 </html>

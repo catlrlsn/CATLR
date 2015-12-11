@@ -1,3 +1,22 @@
+//Add carets on sidemenu
+(function($) {
+    $('.accordion > .page_item_has_children > a').after('<span class="caret"></span>');
+})(jQuery);
+
+//Make menu collapsible
+(function($) {
+    $('.accordion > li > .container').hide();
+    $('.caret').click(function() {
+        children = $(this).next();
+        if(children.css('display') == 'none'){
+            children.slideDown(0);
+         } else {
+            children.slideUp(0);
+         }
+         return false;
+    });
+})(jQuery); 
+
 (function( $, undefined ) {
 	'use strict';
 
