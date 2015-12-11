@@ -26,7 +26,7 @@
 					
 				<?php endwhile; ?>	
 					
-					<?php if (function_exists('wp_bootstrap_page_navi')) { // if expirimental feature is active ?>
+					<?php if (function_exists('wp_bootstrap_page_navi')) { // if experimental feature is active ?>
 						
 						<?php wp_bootstrap_page_navi(); // use the page navi function ?>
 						

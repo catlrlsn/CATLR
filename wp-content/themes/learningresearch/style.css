@@ -21,7 +21,7 @@ Version: 1.0
 }
 .search-form{
     position:absolute;
-    top:110px;
+    top:90px;
     right:23%;
 }
 a[class*="fontawesome-"]:before,

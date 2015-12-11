@@ -5,7 +5,7 @@
 		<header class="sidebar-heading">
 			<?= get_subnavigation('title'); ?>
 		</header>
-		<ul>
+		<ul class="accordion">
 			<?= get_subnavigation(); ?>
 		</ul>
 	</div>

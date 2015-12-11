@@ -19,10 +19,8 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	   <style>
-
-       </style>
-          
+        <style>
+        </style>
         <?php wp_head(); ?>
 
         <!--[if lt IE 9]>

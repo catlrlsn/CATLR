@@ -50,5 +50,19 @@
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+        <script>
+            (function($) {
+              var allPanels = $('.accordion > li > ul').hide();
+              if($('.accordion > li > ul').css('display') == 'none'){
+                  $('.accordion > li').hover(
+                  function() {
+                        $(this).find('ul:first').slideDown(700);
+                  },
+                  function() {
+                        $(this).find('ul:first').slideUp(700);
+                  });
+              }
+            })(jQuery); 
+       </script>
     </body>
 </html>
