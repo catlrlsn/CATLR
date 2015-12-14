@@ -10,7 +10,7 @@
 
 		    </div><!-- /col-sm-3 -->
 
-		    <div class="col-sm-9">
+		    <div class="col-sm-9 resp">
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
