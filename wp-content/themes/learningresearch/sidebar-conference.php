@@ -15,13 +15,10 @@
 <aside id="sidebar-page" role="sidebar">
 	<div class="entry-sidebar-simple" style="margin-top:0;">
            <!-- CHANGE HERE CRISTIAN -->
-            <div class="well">
-                <h4 class="text-center"><b>Register to Attend</b></h4>
-                <div id="wufoo-q1yiz2sc1bs1fv8">
-                    <a href="https://provostweb.wufoo.com/forms/q1yiz2sc1bs1fv8">Online Form</a>.
-                </div>
-            </div>
-            
+            <a class="bottom-spacer btn btn-danger pull-left" href="https://addevent.com/event/?ci79711">
+               <span style="text-transform: uppercase; ">Add to</span><br>
+               <span style="text-transform: uppercase; ">Calendar</span>
+            </a>
         <?php /*
             <script type="text/javascript">
                 var q1yiz2sc1bs1fv8;(function(d, t) {
@@ -69,7 +66,7 @@
             </a>
             <a href="<?= get_permalink(1772); ?>" title="Submit a Proposal" class="btn btn-danger btn-lg"><b>Call for Proposals</b><br><small>Deadline: 2/9/15</small></a>
         */ ?>
-       
+    
         <?php if ($registration) : ?>
         <div>
             <a href="<?= $registration_link; ?>" title="Register" class="btn btn-danger btn-lg"><b>Register Now</b></a>
@@ -83,5 +80,9 @@
 	</div>
 </aside><!-- /sidebar -->
 <!-- /#sidebar -->
-
+<script>
+(function($) {
+    $('.page-item-4355').css('display') = 'none';
+})(jQuery);
+</script>
 <?php endif; ?>

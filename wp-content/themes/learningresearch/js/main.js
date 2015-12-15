@@ -1,7 +1,18 @@
-//Add carets on sidemenu
+//Hide Menu Item Conference
+$(document).ready(function () {
+    if(window.location.href.indexOf("evidence-based-teaching-2016") > -1) {
+        $('.page-item-4355').css('display','none');
+    }
+});
+//Doesn't support Jquery
+//var submitPage = document.getElementsByClassName('page-item-4355');
+//submitPage.style.display = 'none';
+
+   //Add carets on sidemenu
 (function($) {
     $('.accordion > .page_item_has_children > a').after('<span class="caret"></span>');
 })(jQuery);
+
 
 //Make menu collapsible
 (function($) {

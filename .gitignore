@@ -3,6 +3,7 @@
 /wp-content/themes/learningresearch/.git*
 /wp-content/upgrade
 /wp-content/uploads
+/wp-content/plugins/wordfence
 /sitemap.*
 /wp-config.php
 *.sql

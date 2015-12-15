@@ -13,6 +13,9 @@ Version: 1.0
 .right-spacer {
   margin-right: 20px;
 }
+.bottom-spacer {
+    margin-bottom: 20px;
+}
 
 
 /**********Side-Menu****************/
@@ -291,7 +294,6 @@ ul {
 @media only screen and (max-width: 992px) {
     .search-form{
         right: 2%;
-        top: 125px;
     }
 }
 /* iPhone Retina Extra Small Devices, Phones */
