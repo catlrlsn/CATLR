@@ -349,7 +349,7 @@ class My_Walker extends Walker_Page {
         $indent = str_repeat("\t", $depth);
 
         if ($depth == 0) {
-            $output .= "\n$indent<div class='container'><div class='container2'><ul>\n";
+            $output .= "\n$indent<div class='container'><ul>\n";
         } else {
             $output .= "\n$indent<ul class='children'>\n";
         }
@@ -359,7 +359,7 @@ class My_Walker extends Walker_Page {
         $indent = str_repeat("\t", $depth);
 
         if ($depth == 0) {
-            $output .= "$indent</ul></div></div>\n";
+            $output .= "$indent</ul></div>\n";
         } else {
             $output .= "$indent</ul>\n";
         }
@@ -393,6 +393,7 @@ function get_subnavigation( $display = 'subnavigation', $post_type = 'page' )
             $ancestors = end($post->ancestors);
             $title = '<a href="'. get_permalink($ancestors) .'">'. get_the_title($ancestors) .'</a>';
             $children = wp_list_pages("title_li=&child_of=".$ancestors."&depth=3&post_type=".$post_type."&echo=0");
+            
          
         }
     }

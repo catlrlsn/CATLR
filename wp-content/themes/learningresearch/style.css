@@ -22,9 +22,8 @@ Version: 1.0
 .resp {
     position: static;
 }
-.container2{
-    max-width:190px;
-}
+
+
 /*.children{
     max-width:190px;
 }*/
@@ -85,6 +84,9 @@ span[class*="fontawesome-"]:before {
     border-left: 1px solid;
 }
 /**********Sidebar****************/
+.accordion {
+    max-width:190px;
+}
 .accordion > li {
     display:block;
 }

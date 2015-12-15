@@ -14,7 +14,7 @@
         <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?v=1.0.1">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
 	    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
