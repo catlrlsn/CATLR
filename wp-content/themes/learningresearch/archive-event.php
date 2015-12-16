@@ -23,14 +23,23 @@
                     <col width="10%">
                     <col width="10%">
                     <col width="10%">
+                    <col width="10%">
                     <col width="40%">
                     <thead>
                         <tr>
-                            <th>Title</th>
+                            <!-- <th>Title</th>
                             <th>Date</th>
                             <th>Time</th>
                             <th>Category</th>
                             <th>Audience</th>
+                            <th class="dataTable-nosort">Description</th>
+                            -->
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Audience</th>
+                            <th>Theme</th>
+                            <th>Format</th>
                             <th class="dataTable-nosort">Description</th>
                         </tr>
                     </thead>
@@ -62,12 +71,13 @@
                             <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
                             <td><?= $start_date->format('n/j/Y'); ?></td>
                             <td><?= ( $end_time ? $start_time .' - '. $end_time : $start_time ); ?> </td>
-                            <td><?= get_taxonomy_list('category', false); ?></td>
                             <td><?= get_taxonomy_list('audience', false); ?></td>
+                            <td><?= get_taxonomy_list('theme',false); ?></td>
+                            <td><?= get_taxonomy_list('category', false); ?></td>
                             <td><?php the_excerpt(); ?></td>
                         </tr>
 
-                        <!--
+                        <!--<?php //the_excerpt(); ?>
                         <article class="summary">
                             <header class="entry-header">
                                 <h2 class="entry-title">
