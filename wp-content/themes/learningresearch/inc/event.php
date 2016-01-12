@@ -20,6 +20,14 @@
 	?>
 </h5>
 
+<h5 class="entry-byline">Audience:
+    <?php $terms_as_text = strip_tags( get_the_term_list( $wp_query->post->ID, 'audience', '', ', ', '' ) );
+          echo $terms_as_text; ?>
+</h5>
+<h5 class="entry-byline">Theme:
+    <?php $terms_as_text = strip_tags( get_the_term_list( $wp_query->post->ID, 'theme', '', ', ', '' ) );
+          echo $terms_as_text; ?>
+</h5>
 <?php if (get_field('location')) : ?>
 <h5 class="entry-byline"><b>Location:</b> <?php the_field('location'); ?></h5>
 <?php endif; ?>

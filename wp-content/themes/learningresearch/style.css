@@ -16,7 +16,11 @@ Version: 1.0
 .bottom-spacer {
     margin-bottom: 20px;
 }
-
+.flipper{
+    transform:rotateX(180deg);
+    -ms-transform:rotateX(180deg); /* IE 9 */
+    -webkit-transform:rotateX(180deg); /* Safari and Chrome */
+}
 
 /**********Side-Menu****************/
 .resp {
@@ -44,6 +48,9 @@ span[class*="fontawesome-"]:before {
 
 .toolbar {
 	color: #fff;
+    list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .toolbar li {
@@ -103,6 +110,13 @@ span[class*="fontawesome-"]:before {
     border-right: 6px solid transparent;
     border-top: 6px solid #000000;
 }
+/**********Event Table***********/
+.tableScrollable {
+    width: 100%;
+}
+.table-nosort {
+    background: none !important;
+}
 /* ---------- GENERAL ---------- */
 button {
     -webkit-appearance: button;
@@ -156,12 +170,6 @@ input[type="search"]::-webkit-search-decoration {
 input::-moz-focus-inner {
     border: 0;
     padding: 0;
-}
-
-ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 
 /* ---------- CLASSES ---------- */
@@ -287,6 +295,9 @@ ul {
     .search-form{
         display:none;
     }
+    .tableScrollable{
+        overflow-x: auto;
+    }
    /* .caret {
         display:none;
     }*/
@@ -294,6 +305,12 @@ ul {
 @media only screen and (max-width: 992px) {
     .search-form{
         right: 2%;
+    }
+    .dataTable .header{
+        font-size:13px;
+    }
+    .dataTable thead>tr>th{
+        padding-right:20px;
     }
 }
 /* iPhone Retina Extra Small Devices, Phones */
