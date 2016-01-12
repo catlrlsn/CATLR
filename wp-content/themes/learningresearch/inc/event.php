@@ -9,7 +9,9 @@
 ?>
 
 <h5 class="entry-byline" style="padding-top: 10px;">
-	<?= $start_date->format('F j, Y'); ?>
+	<?php
+        echo $terms_as_text = strip_tags( get_the_term_list( $wp_query->post->ID, 'category', '', ', ', '' ) ). ' on '; ?>
+    <?= $start_date->format('F j, Y'); ?>
 
 	<?php 
 		if ( $end_time ) {

@@ -1,14 +1,14 @@
 <table class="table table-striped table-hover dataTable dataTable-tools">
-    <col width="20%">
+    <col width="25%">
     <col width="10%">
     <col width="15%">
     <col width="15%">
-    <col width="40%">
+    <col width="35%">
     <thead>
         <tr>
             <th>Title</th>
             <th>Date</th>
-            <th>Theme</th> -->
+            <th>Format</th>
             <th>Audience</th>
             <th class="dataTable-nosort">Description</th>
         </tr>
@@ -17,16 +17,12 @@
     <?php
         $args = array(
             'post_type'=> 'event',
-            'category_name' => get_the_title(),
             'posts_per_page' => -1,
-            'order' => 'ASC',
-            'orderby' => 'meta_value',
-            'meta_key' => 'start_date',
-            'meta_query' => array(
+            'tax_query' => array(
                 array(
-                    'key' => 'start_date',
-                    'value' => date('Ymd'),
-                    'compare' => '>='
+                    'taxonomy' => 'theme',
+                    'field' => 'slug',
+                    'terms' => basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))
                 )
             )
         );
@@ -41,7 +37,7 @@
         <tr>
             <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
             <td><?= $start_date->format('n/j/Y'); ?></td>
-            <td><?= get_taxonomy_list('theme', false); ?></td>
+            <td><?= get_taxonomy_list('category', false); ?></td>
             <td><?= get_taxonomy_list('audience', false); ?></td>
             <td><?php the_excerpt(); ?></td>
         </tr>
