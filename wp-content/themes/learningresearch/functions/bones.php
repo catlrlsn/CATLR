@@ -19,6 +19,42 @@ right up top and clean.
 // we're firing all out initial functions at the start
 add_action('after_setup_theme','bones_ahoy', 16);
 
+function wpb_set_post_views($postID) {
+    $count_key = 'wpb_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+
+function wpb_track_post_views ($post_id) {
+    if ( !is_single() ) return;
+    if ( empty ( $post_id) ) {
+        global $post;
+        $post_id = $post->ID;
+    }
+    wpb_set_post_views($post_id);
+}
+
+
+
+function wpb_get_post_views($postID){
+    $count_key = 'wpb_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return '0 View';
+    }
+    return $count.' Views';
+}
+
+
 function bones_ahoy() {
 
     // launching operation cleanup
@@ -31,7 +67,9 @@ function bones_ahoy() {
     add_action('wp_head', 'bones_remove_recent_comments_style', 1);
     // clean up gallery output in wp
     add_filter('gallery_style', 'bones_gallery_style');
-
+    //To keep the count accurate, lets get rid of prefetching
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+    add_action('wp_head', 'wpb_track_post_views');
     // enqueue base scripts and styles
     // NO *** add_action('wp_enqueue_scripts', 'bones_scripts_and_styles', 999);
 

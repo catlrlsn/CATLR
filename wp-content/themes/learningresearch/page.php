@@ -40,6 +40,6 @@
 
 		</div>
 	</div><!-- /container -->
-<?php echo(wpb_get_post_views(get_the_ID())); ?>
+<?php echo(wpb_set_post_views(get_the_ID())); ?>
 
 <?php get_footer(); ?>
