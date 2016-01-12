@@ -8,8 +8,8 @@
         <tr>
             <th>Title</th>
             <th>Date</th>
-            <th>Theme</th> -->
-            <th>Audience</th>
+            <th>Time</th>
+            <th>Theme</th>
             <th class="dataTable-nosort">Description</th>
         </tr>
     </thead>
@@ -31,18 +31,23 @@
             )
         );
         query_posts($args);
+        $url = $_SERVER['REQUEST_URI'];
         while ( have_posts() ) : 
             the_post(); 
+            if(strpos($url, 'workshop') !== false && strpos(get_the_title(), '(GRAD)') !== false) {
+                continue;
+            }
             $start_date = DateTime::createFromFormat('Ymd', get_field('start_date'));
             $end_date = DateTime::createFromFormat('Ymd', get_field('end_date'));
             $start_time = get_field('start_time');
             $end_time = get_field('end_time');
+            
     ?>
         <tr>
             <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
             <td><?= $start_date->format('n/j/Y'); ?></td>
+            <td><?= ( $end_time ? $start_time .' - '. $end_time : $start_time ); ?></td>
             <td><?= get_taxonomy_list('theme', false); ?></td>
-            <td><?= get_taxonomy_list('audience', false); ?></td>
             <td><?php the_excerpt(); ?></td>
         </tr>
 
@@ -69,6 +74,8 @@
             </div>
         </article>
         -->
-    <?php endwhile; wp_reset_query(); ?>
+    <?php //} //close else
+        endwhile;
+        wp_reset_query(); ?>
     </tbody>
 </table>

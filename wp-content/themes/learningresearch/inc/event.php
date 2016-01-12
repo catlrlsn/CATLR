@@ -9,8 +9,6 @@
 ?>
 
 <h5 class="entry-byline" style="padding-top: 10px;">
-	<?php
-        echo $terms_as_text = strip_tags( get_the_term_list( $wp_query->post->ID, 'category', '', ', ', '' ) ). ' on '; ?>
     <?= $start_date->format('F j, Y'); ?>
 
 	<?php 
@@ -22,13 +20,11 @@
 	?>
 </h5>
 
-<h5 class="entry-byline">Audience:
-    <?php $terms_as_text = strip_tags( get_the_term_list( $wp_query->post->ID, 'audience', '', ', ', '' ) );
-          echo $terms_as_text; ?>
-</h5>
-<h5 class="entry-byline">Theme:
-    <?php $terms_as_text = strip_tags( get_the_term_list( $wp_query->post->ID, 'theme', '', ', ', '' ) );
-          echo $terms_as_text; ?>
+<h5 class="entry-byline">
+    <?php $audience = strip_tags( get_the_term_list( $wp_query->post->ID, 'audience', '', ', ', '' ) );
+          $theme = strip_tags( get_the_term_list( $wp_query->post->ID, 'theme', '', ', ', '' ) );
+          $format = strip_tags( get_the_term_list( $wp_query->post->ID, 'category', '', ', ', '' ) );
+          echo 'Audience: '.$audience.' | Theme: '.$theme.' | Category: '.$format; ?>
 </h5>
 <?php if (get_field('location')) : ?>
 <h5 class="entry-byline"><b>Location:</b> <?php the_field('location'); ?></h5>

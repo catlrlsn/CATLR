@@ -1,15 +1,13 @@
 <table class="table table-striped table-hover dataTable dataTable-tools">
-    <col width="25%">
+    <col width="30%">
     <col width="10%">
-    <col width="15%">
-    <col width="15%">
-    <col width="35%">
+    <col width="20%">
+    <col width="40%">
     <thead>
         <tr>
             <th>Title</th>
             <th>Date</th>
-            <th>Format</th>
-            <th>Audience</th>
+            <th>Time</th>
             <th class="dataTable-nosort">Description</th>
         </tr>
     </thead>
@@ -18,6 +16,7 @@
         $args = array(
             'post_type'=> 'event',
             'posts_per_page' => -1,
+            'order' => 'ASC',
             'tax_query' => array(
                 array(
                     'taxonomy' => 'theme',
@@ -37,8 +36,7 @@
         <tr>
             <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
             <td><?= $start_date->format('n/j/Y'); ?></td>
-            <td><?= get_taxonomy_list('category', false); ?></td>
-            <td><?= get_taxonomy_list('audience', false); ?></td>
+            <td><?= ( $end_time ? $start_time .' - '. $end_time : $start_time ); ?></td>
             <td><?php the_excerpt(); ?></td>
         </tr>
 

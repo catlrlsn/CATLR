@@ -17,7 +17,7 @@ Template Name: Page Event
 		    </div><!-- /col-sm-3 -->
 
 		    <div class="col-sm-9">
-
+                
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		    	<article <?php post_class('hentry'); ?> id="entry-<?php the_ID(); ?>" role="article">
@@ -43,7 +43,6 @@ Template Name: Page Event
 				</article><!-- /post -->
 
 				<?php endwhile; endif; ?>
-
 		    </div><!-- /col-sm-9 -->
 
 		</div>

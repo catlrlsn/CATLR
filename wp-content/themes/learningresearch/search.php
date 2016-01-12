@@ -1,19 +1,41 @@
 <?php get_header(); ?>
     <div class="container" class="clearfix row">
+        
+        <div id="main" class="col col-lg-4 clearfix" role="main">
+            
+            <?php echo '<h4>Order results by date 
+            <a  style=" text-decoration: none;" href="' . get_bloginfo('url') . '?s=' . get_search_query() . '&orderby=post_date&order=asc">
+             <i class="fa fa-caret-up" style="margin-left:10px;"></i>
+            </a>';
+            echo '
+            <a  href="' . get_bloginfo('url') . '?s=' . get_search_query() . '&orderby=post_date&order=desc">
+             <i class="fa fa-caret-down" style="margin-left:10px;"></i>
+            </a> </h4>';?>
+
+        </div>
+        
+        
 		<div id="main" class="col col-lg-8 clearfix" role="main">
 				<div class="page-header" style="margin-top: 0px;">
-                    <h1><span><?php _e("Search Results for","wpbootstrap"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1>
+                    <h1>
+                        <span><?php _e("Search Results for","wpbootstrap"); ?>:</span>
+                        <?php echo esc_attr(get_search_query()); ?>
+                    </h1>
                 </div>
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 				<header>
-				<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-				<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(); ?></time> <?php _e("by", "wpbootstrap"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "wpbootstrap"); ?> <?php the_category(', '); ?>.</p>
-						
+                    <h3>
+                        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+                           <u> <?php the_title(); ?> </u>
+                        </a>
+                    </h3>
+                    <p class="meta">
+                    </p>
 				</header> <!-- end article header -->
 					
 				<section class="post_content">
-							<?php the_excerpt('<span class="read-more">' . __("Read more on","wpbootstrap") . ' "'.the_title('', '', false).'" &raquo;</span>'); ?>
+							<?php the_excerpt(); ?>
 					
 				</section> <!-- end article section -->
 						
@@ -59,9 +81,6 @@
 					<?php endif; ?>
 			
 				</div> <!-- end #main -->
-    			<div id="main" class="col col-lg-4 clearfix" role="main">
-                    <img src="http://placehold.it/350x750">
-                </div>
     			
 			</div> <!-- end #content -->
 

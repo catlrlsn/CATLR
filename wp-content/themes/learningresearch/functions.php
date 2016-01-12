@@ -45,9 +45,6 @@ require_once('functions/admin.php'); // this comes turned off by default
 	- adding custom utility functions
 */
 require_once('functions/utility.php');
-
-
-
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
