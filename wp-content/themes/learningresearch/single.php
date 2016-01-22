@@ -16,7 +16,11 @@
 				    
 					<?php if (get_field('registration_id')) : ?>
 				
-					<?php get_template_part( 'inc/rsvp-form' ); ?>	
+                    <?php if (strtotime(get_field('end_date')) > time()) : ?>
+				
+                    <?php get_template_part( 'inc/rsvp-form' ); ?>	
+                    
+                    <?php endif; ?>
 					
 					<?php else: ?>
 					

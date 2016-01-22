@@ -23,15 +23,7 @@ Version: 1.0
 }
 
 /**********Side-Menu****************/
-.resp {
-    position: static;
-}
-.container2{
-    max-width:190px;
-}
-/*.children{
-    max-width:190px;
-}*/
+
 
 /**********Search****************/
 .search-form{
@@ -110,6 +102,36 @@ span[class*="fontawesome-"]:before {
     border-right: 6px solid transparent;
     border-top: 6px solid #000000;
 }
+.resp {
+    position: static;
+}
+
+.children{
+    max-width:150px;
+}
+@media only screen and (max-width: 992px) {
+    .caret {
+        top: -30px;
+    }
+    .children{
+        max-width: 60px;
+    }
+    .container2{
+        max-width: 60px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .caret {
+        top: 15px;
+    }
+    .children{
+        max-width: 160px;
+    }
+    .container2{
+        max-width: 160px;
+    }
+}
+
 /**********Event Table***********/
 .tableScrollable {
     width: 100%;

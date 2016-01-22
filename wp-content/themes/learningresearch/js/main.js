@@ -7,7 +7,7 @@ $(document).ready(function () {
 //Doesn't support Jquery
 //var submitPage = document.getElementsByClassName('page-item-4355');
 //submitPage.style.display = 'none';
-/*
+
    //Add carets on sidemenu
 (function($) {
     $('.accordion > .page_item_has_children > a').after('<span class="caret"></span>');
@@ -20,14 +20,16 @@ $(document).ready(function () {
     $('.caret').click(function() {
         children = $(this).next();
         if(children.css('display') == 'none'){
+            $(this).css('border-top', '6px solid #6d6f71');
             children.slideDown(0);
          } else {
+            $(this).css('border-top', '6px solid #000000'); 
             children.slideUp(0);
          }
          return false;
     });
 })(jQuery); 
-*/
+
 (function( $, undefined ) {
 	'use strict';
 
