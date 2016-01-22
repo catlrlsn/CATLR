@@ -14,19 +14,14 @@
 	
 			    <div class="col-sm-4 col-sm-offset-1">
 				    
-					<?php if (get_field('registration_id')) : ?>
 				
-                    <?php if (strtotime(get_field('end_date')) > time()) : ?>
-				
-                    <?php get_template_part( 'inc/rsvp-form' ); ?>	
+                    <?php if (strtotime(get_field('end_date')) < get_the_date()) {
+                            get_template_part( 'inc/rsvp-form');}
+                          else {
+                              get_sidebar('events');
+                          }
                     
-                    <?php endif; ?>
-					
-					<?php else: ?>
-					
-					<?php get_sidebar('events'); ?>
-				
-					<?php endif; ?>
+                    ?>
 	
 			    
 			    </div><!-- /col-sm-4 -->

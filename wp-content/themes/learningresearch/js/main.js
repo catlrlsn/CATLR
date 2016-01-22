@@ -17,10 +17,12 @@ $(document).ready(function () {
 //Make menu collapsible
 (function($) {
     $('.accordion > li > .container').hide();
+    $('.accordion > li > .children').hide();
+    $('.current_page_item').parent().show();
     $('.caret').click(function() {
         children = $(this).next();
         if(children.css('display') == 'none'){
-            $(this).css('border-top', '6px solid #6d6f71');
+            $(this).css('border-top', '6px solid #CD2027');
             children.slideDown(0);
          } else {
             $(this).css('border-top', '6px solid #000000'); 
