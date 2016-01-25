@@ -13,12 +13,27 @@ $(document).ready(function () {
     $('.accordion > .page_item_has_children > a').after('<span class="caret"></span>');
 })(jQuery);
 
+//ugly
+$(document).ready(function () {
+    $url = window.location.href;
+    if(window.location.href.indexOf('post_date&order=asc') > -1) {
+        $('.dup').css('color', '#CD2027');
+    } else if($url.indexOf('post_date&order=desc') > -1) {
+        $('.ddwn').css('color', '#CD2027');
+    } else if($url.indexOf('title&order=asc') >-1 ) {
+        $('.tup').css('color', '#CD2027');
+    } else if($url.indexOf('title&order=desc') >-1 ) {
+        $('.tdwn').css('color', '#CD2027');
+    }
+});
 
 //Make menu collapsible
 (function($) {
     $('.accordion > li > .container').hide();
     $('.accordion > li > .children').hide();
-    $('.current_page_item').parent().show();
+    $('.accordion > li > .children > .current_page_item').parent().show(); //single element
+    $('.current_page_parent').parent().show(); //inner element
+    $('.accordion > .current_page_ancestor > .caret').css('border-top', '6px solid #CD2027'); //color if open
     $('.caret').click(function() {
         children = $(this).next();
         if(children.css('display') == 'none'){
