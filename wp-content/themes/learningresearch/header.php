@@ -17,6 +17,8 @@
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?v=1.0.1">
 	    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
         <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" href="http://localhost/magnific-popup.css">
+        <script src="http://localhost/jquery.magnific-popup.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
         <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->   
         <style>
@@ -51,11 +53,11 @@
 				
 				<ul class="toolbar clearfix">
 
-                    <li>
+                   <!-- <li>
                         <button type="submit" href="#">
                             <span class="fa fa-envelope"></span>
                         </button>
-                    </li>
+                    </li>-->
 					<li><input id="search-input" type="search" placeholder="Search for..." value="<?php echo esc_attr_x( '', 'submit button' ) ?>" name="s"></li>
 					<li><button type="submit" id="btn-search" value="<?php echo get_search_query() ?>"><span class="fa fa-search"></span></button></li>
 

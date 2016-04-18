@@ -1,39 +1,63 @@
 <?php get_header(); ?>
+
     <div class="container" class="clearfix row">
-        
+
         <div id="main" class="col col-lg-4 clearfix" role="main">
-            <?php echo '<h5 class="searchSide">Order results by date 
-            <a  style=" text-decoration: none;" href="' . get_bloginfo('url') . '?s=' . get_search_query() . '&orderby=post_date&order=asc">
-             <i class="fa fa-caret-up dup" style="margin-left:10px;"></i>
-            </a>';
-            echo '
-            <a  href="' . get_bloginfo('url') . '?s=' . get_search_query() . '&orderby=post_date&order=desc">
-             <i class="fa fa-caret-down ddwn" style="margin-left:5px;"></i>
-            </a> </h5>';?>
-            <?php echo '<h5 class="searchSide">Order results alphabetically 
-            <a  style=" text-decoration: none;" href="' . get_bloginfo('url') . '?s=' . get_search_query() . '&orderby=title&order=asc">
-             <i class="fa fa-caret-up tup" style="margin-left:5px;"></i>
-            </a>';
-            echo '
-            <a  href="' . get_bloginfo('url') . '?s=' . get_search_query() . '&orderby=title&order=desc">
-             <i class="fa fa-caret-down tdwn" style="margin-left:5px;"></i>
-            </a> </h5>';?>
+                              <!-- Single button -->
+            <div class="btn-group" >
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="    padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;background-color:#fff;color:black;">
+                  
+                <?php 
+                  if(strpos($_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"], '&orderby=post_date&order=asc')) {
+                      echo 'Sorted Chronologically (Old-New) <i class="fa fa-sort"> </i>';
+                  } else if(strpos($_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"], '&orderby=post_date&order=desc')) {
+                      echo 'Sorted Chronologically (New-Old) <i class="fa fa-sort"> </i>';
+                  } else if(strpos($_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"], '&orderby=post_title&order=asc')) {
+                      echo 'Sorted Alphabetically (A-Z) <i class="fa fa-sort"> </i>';
+                  } else if(strpos($_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"], '&orderby=post_title&order=desc')) {
+                      echo 'Sorted Alphabetically (Z-A) <i class="fa fa-sort" ></i>';
+                  } else {
+                      echo 'Sorted by relevance <i class="fa fa-sort"></i> ';
+                  } ?>
+                 
+              </button>
+              <ul class="dropdown-menu">
+                  <?php echo '
+                <li><a href="' . get_bloginfo('url') . '?s=' . get_search_query() . '&orderby=post_title&order=asc">
+                Alphabetically (A-Z)</a></li>
+                <li><a href="'. get_bloginfo('url') . '?s=' . get_search_query() . '&orderby=post_title&order=desc">
+                Alphabetically (Z-A)</a></li>
+                <li><a href="' . get_bloginfo('url') . '?s=' . get_search_query() . '&orderby=post_date&order=desc">
+                Chronologically (Newest-Oldest)</a></li>
+                <li><a href="' . get_bloginfo('url') . '?s=' . get_search_query() . '&orderby=post_date&order=asc">
+                Chronologically (Oldest-Newest)</a></li>
+                <li><a href="' . get_bloginfo('url') . '?s=' . get_search_query(). '">
+                By relevance</a></li>'
+                    ?>
+              </ul>
+            </div>  
             <header class="sidebar-heading top-spacer">
-			 Popular Links:		
+			 <br> Popular Links:		
             </header>
             <ul style="list-style-type:none;float:left;padding:0px;">
-                <li>
-                    <a class="popl">Upcoming Events</a>
-                </li>
                 <li >
-                    <a class="popl">Conference</a>
+                    <a href="http://www.northeastern.edu/learningresearch/event/" class="popl">Upcoming Events</a>
                 </li>
-                <li >
-                    <a class="popl">Meet the team</a>
+                <li class="top-spacer">
+                    <a href="http://www.northeastern.edu/learningresearch/conferences/conference-evidence-based-teaching/overview/" class="popl">Conference</a>
                 </li>
-                <li >
-                    <a class="popl">Learning Science Network</a>
+                <li class="top-spacer">
+                    <a href="http://www.northeastern.edu/learningresearch/about/who-we-are/" class="popl">Meet the team</a>
                 </li>
+                <li class="top-spacer">
+                    <a href="http://www.northeastern.edu/learningresearch/learningsciencenetwork/" class="popl">Learning Science Network</a>
+                </li>
+
+            <li>
+              </li>  
             </ul>
         </div>
         
@@ -46,14 +70,21 @@
                     </h1>
                 </div>
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+               
 				<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 				<header>
                     <h3>
                         <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
                            <u> <?php the_title(); ?> </u>
+                           
                         </a>
                     </h3>
-                    <p class="meta postDate"> <?php echo get_the_date(); ?>
+                   
+                    <p class="meta postDate"> <?php $data = get_permalink(); 
+                                $bread = substr($data, 45);
+                                $bread = substr($bread, 0, strpos($bread, "/"));
+                                $bread = ucfirst(str_replace('-', ' ', $bread));
+                                echo '<b>'. $bread .'</b>' ; ?>
                     </p>
 				</header> <!-- end article header -->
 					
@@ -78,7 +109,7 @@
 					<?php } else { // if it is disabled, display regular wp prev & next links ?>
 						<nav class="wp-prev-next">
 							<ul class="clearfix">
-								<li class="prev-link">
+								<li class="prev-link" style=" list-style-type: none;">
                                     <?php previous_posts_link() ?>
                                     <span style="float:right;"><?php next_posts_link() ?></span>
                                 </li>

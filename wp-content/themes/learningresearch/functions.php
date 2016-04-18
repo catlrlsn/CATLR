@@ -9,7 +9,6 @@ sidebars, comments, ect.
 */
 
 /************* INCLUDE NEEDED FILES ***************/
-
 /*
 1. functions/bones.php
 	- head cleanup (remove rsd, uri links, junk css, ect)

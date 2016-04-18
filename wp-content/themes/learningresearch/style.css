@@ -8,8 +8,54 @@ Version: 1.0
 */
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
-
+/*****POP-UP FORMS****/
+.field {
+ margin-top: -35px;
+}
+/*****BUTTONS*****/
+.expandable {
+ text-decoration: none;
+ background-color: white;
+ color: black;
+}
+.btn-red {
+    color: #fff !important;
+    background-color: #c00;
+    border-color: #c00;
+    display:block;
+    width:290px;
+    margin-left:auto !important;
+    margin-right:auto !important;
+}
+.btn-red a:hover {
+    background-color: #b30000;
+}
+.btn-green {
+    color: #fff !important;
+    background-color: #3FBF3F;
+    border-color: #3FBF3F;
+    display:block;
+    width:290px;
+    margin-left:auto !important;
+    margin-right:auto !important;
+}
+.btn-green a:hover {
+   background-color: #267226;
+}
+.btn-purple {
+    color: #fff !important;
+    background-color: #7F3FBF;
+    border-color: #7F3FBF;
+    display:block;
+    width:290px;
+    margin-left:auto !important;
+    margin-right:auto !important;
+}
+.btn-purple a:hover {
+    background-color: #4C2672;
+}
 /**********SPACERS****************/
+
 .right-spacer {
   margin-right: 20px;
 }
@@ -19,6 +65,9 @@ Version: 1.0
 .top-spacer {
     margin-top: 20px;
 }
+.top-spacer-big {
+    margin-top: 50px;
+}
 .no-top-spacer {
     margin-top: 0px;
 }
@@ -27,11 +76,10 @@ Version: 1.0
     -ms-transform:rotateX(180deg); /* IE 9 */
     -webkit-transform:rotateX(180deg); /* Safari and Chrome */
 }
-
-/**********Side-Menu****************/
-
-
 /**********Search****************/
+.fa-sort {
+    margin-left: 10px;
+}
 .search-form{
     position:absolute;
     top:90px;
@@ -44,6 +92,11 @@ span[class*="fontawesome-"]:before {
 	-webkit-font-smoothing: antialiased;
 }
 
+.dup {
+    width:20px;
+    height:20px;
+    margin-left:10px;
+}
 .toolbar {
 	color: #fff;
     list-style: none;
@@ -97,15 +150,23 @@ span[class*="fontawesome-"]:before {
 .searchSide {
     font-size: 18px;
     margin-left: -2px;
-    margin-top: 18px;
+    margin-top: 30px;
 }
 .popl{
-font-weight:600;line-height:1.2;color:#666666 !important;text-decoration:none;
+    font-weight:600;
+    line-height:1.2;
+    color:#666666 !important;
+    text-decoration:none;
 }
 /**********Sidebar****************/
 .accordion > li {
     display:block;
 }
+
+.accordion > li > i {
+    font-size: 12px;
+}
+
 .accordion > li > a {
  width: 75%;
  float: left;
@@ -128,6 +189,45 @@ font-weight:600;line-height:1.2;color:#666666 !important;text-decoration:none;
 .children{
     max-width:150px;
 }
+
+.page_item > i {
+    float: right;
+    cursor: pointer;
+    cursor: hand;
+    left: -200px;
+    top: 12px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.fa-plus:hover {
+    color: #065FB3;
+}
+
+.fa-minus {
+    color: #0b88ff;
+}
+
+@media only screen and (max-width: 1050px) {
+    .caret {
+        top: -30px;
+    }
+    .children{
+        max-width: 60px;
+    }
+    .container2{
+        max-width: 60px;
+    }
+    
+    .page_item > i {
+        left: -180px;
+    }
+}
+
 @media only screen and (max-width: 992px) {
     .caret {
         top: -30px;
@@ -137,6 +237,10 @@ font-weight:600;line-height:1.2;color:#666666 !important;text-decoration:none;
     }
     .container2{
         max-width: 60px;
+    }
+    
+    .page_item > i {
+        left: -120px;
     }
 }
 @media only screen and (max-width: 768px) {
@@ -149,6 +253,7 @@ font-weight:600;line-height:1.2;color:#666666 !important;text-decoration:none;
     .container2{
         max-width: 160px;
     }
+    
 }
 
 /**********Event Table***********/
@@ -236,100 +341,132 @@ input::-moz-focus-inner {
 }
 
 /**********TEAM MEMBERS***********/
-.team p{
-  display:inline !important;
+/**********TEAM MEMBERS***********/
+
+.team{
+    padding:75px 0;
+}
+h6.description{
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: #999;
+	border-bottom: 1px solid rgba(0, 0, 0,0.1);
+	padding-bottom: 5px;
+}
+.profile{
+	margin-top: 25px;
+}
+.profile h1{
+	font-weight: normal;
+	font-size: 20px;
+	margin:10px 0 0 0;
+}
+.profile h2{
+	font-size: 14px;
+	font-weight: lighter;
+	margin-top: 5px;
+}
+.profile .img-box{
+	opacity: 1;
+	display: block;
+	position: relative;
+}
+.profile .img-box:after{
+	content:"";
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+    width: 197px;
+}
+.img-box {
+        width: 197px;
+        margin-right: 5px;
+}
+.img-box ul{
+    color:white;
+	position: absolute;
+	z-index: 2;
+	top: 50px;
+	text-align: center;
+	width: 100%;
+	padding-left: 0px;
+	height: 0px;
+	margin:0px;
+	opacity: 0;
+}
+.profile .img-box:after, .img-box ul, .img-box ul li{
+	-webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+}
+.img-box > img {
+            height: 310px;
+            width: 197px;
+}
+.img-box ul i{
+	font-size: 20px;
+	letter-spacing: 10px;
+}
+.img-box ul li{
+	width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #88C425;
+    margin: 2px;
+    padding: 5px;
+	display: inline-block;
+}
+.img-box a{
+	color:#fff;
+}
+.img-box:hover:after{
+	opacity: 1;
+}
+.img-box:hover ul{
+	opacity: 1;
+}
+.img-box ul a{
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+.img-box a:hover{
+	border-color: #fff;
+	color: #88C425;
+}
+.profile a{
+    color: rgb(205, 32, 39);
+}
+.img-box a {
+    color: rgb(205, 32, 39);
+}
+.profile a:hover{
+    text-decoration:none;
+    color: #671014;
+}
+.profile i.red{
+    color:#BC0213;
 }
 
-.hovereffect {
-  max-width: 151px;
-  margin-top: 10px;
-  margin-left: 10px;
-  float: left;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  cursor: default;
-  background: #cd2027;
-}
 
-.hovereffect .overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  padding: 50px 20px;
-}
-
-.hovereffect img {
-  display: block;
-  position: relative;
-  max-width: none;
-  width: calc(100% + 20px);
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(-10px,0,0);
-  transform: translate3d(-10px,0,0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.hovereffect:hover img {
-  opacity: 0.4;
-  filter: alpha(opacity=40);
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.hovereffect h2 {
-  text-transform: uppercase;
-  color: #fff;
-  text-align: center;
-  position: relative;
-  font-size: 17px;
-  overflow: hidden;
-  padding: 0.5em 0;
-  background-color: transparent;
-}
-
-.hovereffect h2:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #fff;
-  content: '';
-  -webkit-transition: -webkit-transform 0.35s;
-  transition: transform 0.35s;
-  -webkit-transform: translate3d(-100%,0,0);
-  transform: translate3d(-100%,0,0);
-}
-
-.hovereffect:hover h2:after {
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.hovereffect a, .hovereffect p {
-  color: #FFF;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(100%,0,0);
-  transform: translate3d(100%,0,0);
-}
-
-.hovereffect:hover a, .hovereffect:hover p {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-.member-photo{
-  height:291px;
+@media only screen and (max-width: 1200px) {
+    .profile {
+        margin-left: 15px;
+    }
+    .display-fixer {
+        display: block;
+    }
+    /* .team-cont {
+	width: 117%;
+	margin-left: -80px;
+   }
+   .navbar {
+	width: 105%;
+   }  */
 }
 
 @media only screen and (max-width: 768px) {
@@ -370,5 +507,18 @@ input::-moz-focus-inner {
     background: #505050;
     font-size: 13px;
     color: #fff;
+    font-weight: 700;
 }
-
+.formLoop {
+    height:30px;
+}
+.btn-formLoop {
+    background-color: #c00; 
+    text-align: center;
+    line-height: 0;
+}
+#inputLoop1 {
+    width: 250px;
+    min-height: 30px;
+    height:30px;
+}

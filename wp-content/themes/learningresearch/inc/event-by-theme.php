@@ -32,6 +32,8 @@
             $end_date = DateTime::createFromFormat('Ymd', get_field('end_date'));
             $start_time = get_field('start_time');
             $end_time = get_field('end_time');
+
+         
     ?>
         <tr>
             <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
@@ -39,7 +41,7 @@
             <td><?= ( $end_time ? $start_time .' - '. $end_time : $start_time ); ?></td>
             <td><?php the_excerpt(); ?></td>
         </tr>
-
+        
         <!--
         <article class="summary">
             <header class="entry-header">

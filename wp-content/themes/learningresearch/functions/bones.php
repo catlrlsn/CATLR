@@ -54,6 +54,14 @@ function wpb_get_post_views($postID){
     return $count.' Views';
 }
 
+function searchfilter($query) {
+
+    if ($query->is_search && !is_admin() ) {
+        $query->set('post_type',array('post','event'));
+    }
+
+return $query;
+}
 
 function bones_ahoy() {
 
@@ -80,7 +88,9 @@ function bones_ahoy() {
     // add_action( 'widgets_init', 'bones_register_sidebars' ); 
     // adding the bones search form (created in functions.php)
     add_filter( 'get_search_form', 'bones_wpsearch' );
-
+    
+    //add_filter('pre_get_posts','searchfilter');
+    
     // cleaning up random code around images
     add_filter('the_content', 'bones_filter_ptags_on_images');
     // cleaning up excerpt

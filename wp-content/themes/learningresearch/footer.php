@@ -1,10 +1,35 @@
-        <div class="nav-catlr">
+        
+    <div class="nav-catlr" style="padding-bottom:0;">
             <nav class="container">
-                <div class="row">
-                    test
+            <div class="row">
+			<div class="col-lg-2">
+			USEFUL LINKS
+			<ul style="list-style-type: none;padding-left: 0;margin-bottom:0px;">
+				<li style="font-weight:normal;">Link1</li>
+				<li style="font-weight:normal;">Link2</li>
+				<li style="font-weight:normal;">Link3</li>
+                <li style="font-weight:normal;">Link4</li>
+			</ul>
+			</div>
+                    <div class="col-lg-5">
+                        NEWSLETTER
+						<ul style="list-style-type:none;padding-left:0;margin-bottom:0px;">
+						<li style="font-weight:normal;"> <input type="email" class="formLoop" id="inputLoop1" placeholder="Name"> </li>
+						<li style="font-weight:normal;"> <input type="email" class="formLoop" id="inputLoop1" placeholder="Email"> </li>
+						<li style="font-weight:normal;"> <button type="submit" class="btn btn-default btn-formLoop formLoop">Subscribe</button></li>
+						</ul>
+                    </div>
+                    <div class="col-lg-5" style="text-align:right;">
+						CONNECT
+						<ul style="list-style-type:none;padding-left:0;margin-bottom:0px;">
+						<li style="font-weight:normal;">Snell Library, 2nd Floor</li>
+						<li style="font-weight:normal;">email@email.email.com</li>
+                        <li style="font-weight:normal;">857 555 5555</li>
+                        <li style="font-weight:normal;"><i class="fa fa-twitter"></i><i class="fa fa-facebook"></i> </li>
+                    </div>
                 </div>
             </nav>
-        </div>
+    </div>
 
         <div class="nav-provost no-top-spacer">
             <nav class="container">

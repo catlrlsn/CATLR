@@ -15,7 +15,7 @@
 			    <div class="col-sm-4 col-sm-offset-1">
 				    
 				
-                    <?php if (strtotime(get_field('end_date')) < get_the_date()) {
+                    <?php if (strtotime(get_field('start_date') + '1 day')  > get_the_date()) {
                             get_template_part( 'inc/rsvp-form');}
                           else {
                               get_sidebar('events');

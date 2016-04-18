@@ -7,15 +7,13 @@
 
 		    	<article class="post" id="post-404" role="404">
 		    		<header class="post-header">
-		    			<h5 class="post-meta">404 Error</h5>
-		    			<h1 class="post-title">Page Not Found</h1>
+		    			<h1 class="post-title">Content not available</h1>
 		    		</header><!-- /post-header" -->
 		    		<!-- /#post-id -->
 
 		    		<section class="post-content">
 
-						<p><?php _e("The article you were looking for was not found, but maybe try looking again!", "bonestheme"); ?></p>
-						<p><?php get_search_form(); ?></p>
+						<p><?php _e("<br> Sorry, the page you are looking for is not currently available or is no longer active.  Please visit our homepage (<a href='www.northeastern.edu/learningresearch'> www.northeastern.edu/learningresearch </a>) or contact us at <a href='mailto:learningresearch@neu.edu'>learningresearch@neu.edu</a> for assistance.", "bonestheme"); ?></p>
 
 					</section>
 				</article><!-- /post -->
